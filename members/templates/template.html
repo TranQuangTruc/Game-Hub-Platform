@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'myglobal.css' %}"> 
+<body>
+
+{% for x in mygames %}
+  <li>{{ x.name }}</li>
+{% endfor %}
+
+<p>In views.py you can see how to import and fetch games from the database.</p>
+
+</body>
+</html>

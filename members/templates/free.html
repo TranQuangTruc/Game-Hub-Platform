@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Free To Play Games
+{% endblock %}
+
+{% block content %}
+  <div class="mycard">
+    <h1>FREE TO PLAY GAMES</h1>
+    <ul>
+      {% for x in mygames %}
+        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}   
