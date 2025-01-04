@@ -1,0 +1,60 @@
+{% extends "master.html" %}
+
+{% block title %}
+  User Profile
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'userprofile.css' %}">
+    <div class="userprofile">
+        <div id="container">
+            <div id="header">
+                <h1>User Profile</h1>
+            </div>
+            <div id="content">
+                {% if user %}
+                    <div class="profile-row">
+                        <label for="id_username">ID:</label>
+                        <span>{{ user.id }}</span>
+                    </div>
+                    <div class="profile-row">
+                        <label for="id_name">Name:</label>
+                        <span>{{ user.name }}</span>
+                    </div>
+                    <div class="profile-row">
+                        <label for="id_email">Email:</label>
+                        <span>{{ user.email }}</span>
+                    </div>
+                    <div class="profile-row">
+                        <label for="id_role">Role:</label>
+                        <span>{{ role|title }}</span>
+                    </div>
+
+                    <div class="update-form">
+                        <h2>Update Information</h2>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <label for="id_name">Name:</label>
+                                <input type="text" name="name" id="id_name" value="{{ user.name }}" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="id_email">Email:</label>
+                                <input type="email" name="email" id="id_email" value="{{ user.email }}" required>
+                            </div>
+                            <div class="submit-row">
+                                <button type="submit">Update</button>
+                            </div>
+                        </form>
+                    </div>
+
+                {% else %}
+                    <div class="error">
+                        <p>User data is not available.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
