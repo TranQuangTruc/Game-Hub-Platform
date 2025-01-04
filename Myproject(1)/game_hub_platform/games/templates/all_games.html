@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+
+{% block title %}
+  List Of All Games
+{% endblock %}
+
+{% block content %}
+  <div class="card-container">
+    {% for x in mygames %}
+      <div class="mycard">
+        <h1>{{ x.name }}</h1>
+        <ul>
+          <li onclick="window.location = 'details/{{ x.id }}'">Detail</a></li>
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}   
