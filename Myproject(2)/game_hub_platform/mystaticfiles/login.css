@@ -1,0 +1,74 @@
+.login {
+    background: var(--darkened-bg);
+    height: auto;
+}
+
+.login #header {
+    height: auto;
+    padding: 15px 16px;
+    justify-content: center;
+}
+.login #header h1 {
+    text-align: center;
+    font-size: 35px;
+    margin: 0;
+    color: #FFFFFF
+}
+
+.login #content {
+    padding: 20px;
+}
+
+.login #container {
+    background: #181A21;
+    border: 1px solid var(--hairline-color);
+    border-radius: 20px;
+    overflow: hidden;
+    width: 500px;
+    margin: 100px auto;
+    height: auto;
+}
+
+.login .form-row {
+    padding: 4px;
+}
+.login .form-row label {
+    display: block;
+    line-height: 2em;
+    color: #C5C3C0
+}
+.login .form-row #id_username, .login .form-row #id_password, .login .form-row #id_name, .login .form-row #id_phone {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #32353C;
+    color: #C5C3C0
+}
+
+.login .submit-row {
+    padding: 1em 0 0 0;
+    margin: 0;
+    text-align: center;
+}
+.login .submit-row button {
+    background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.login .submit-row button:hover {
+    transform: scale(1.05);
+}
+
+.login .submit-row button:active {
+    background: #06BFFF;
+    transform: scale(0.9);
+}
+
+.login .password-reset-link {
+    text-align: center;
+}
