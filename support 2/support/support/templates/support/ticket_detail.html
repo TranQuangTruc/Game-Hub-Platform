@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ ticket.subject }}</h1>
+<p>Status: {{ ticket.status }}</p>
+<div>{{ ticket.message }}</div>
+
+<h3>Responses</h3>
+{% for response in ticket.responses.all %}
+<div class="response">
+    <p>{{ response.user }} - {{ response.created_at }}</p>
+    <p>{{ response.message }}</p>
+</div>
+{% endfor %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Response</button>
+</form>
+{% endblock %}

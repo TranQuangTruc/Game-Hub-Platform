@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Your Support Tickets</h1>
+<a href="{% url 'support:create_ticket' %}">Create New Ticket</a>
+
+<ul>
+    {% for ticket in tickets %}
+    <li>
+        <a href="{% url 'support:ticket_detail' ticket.id %}">{{ ticket.subject }}</a>
+        <span>({{ ticket.status }})</span>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
