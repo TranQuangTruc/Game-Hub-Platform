@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ mygame.name }}
+{% endblock %}
+
+{% block content %}
+  <div class="card-container">
+    <div class="mycard">
+      <h1>{{ mygame.name }}</h1>
+      <p>Price: {{ mygame.price }} VND</p>
+      <p>Capacity: {{ mygame.capacity }}</p>
+      <p>Release: {{ mygame.release_date }}</p>
+    </div>
+  </div>
+{% endblock %}

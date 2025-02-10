@@ -1,0 +1,53 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+    <div class="login">
+        <div id="container">
+        <div id="header">
+            <h1>Register</h1>
+        </div>
+        <div id="content">
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message {{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <label for="id_username">Email:</label>
+                    <input type="email" name="email" id="id_username" placeholder="Nhập email của bạn" required>
+                </div>
+                <div class="form-row">
+                    <label for="id_name">Name</label>
+                    <input type="text" name="name" id="id_name"  placeholder="Tên của bạn" required>
+                </div>
+                <div class="form-row">
+                    <label for="id_phone">Phone</label>
+                    <input type="integer" name="phone" id="id_phone" placeholder="Số điện thoại" required>
+                </div>
+                <div class="form-row">
+                    <label for="id_password">Mật khẩu:</label>
+                    <input type="password" name="password" id="id_password" placeholder="Nhập mật khẩu" required>
+                </div>
+                <div class="form-row">
+                    <label>Chọn vai trò:</label>
+                    <input type="radio" name="role" value="player" id="id_isPlayer"> Player<br>
+                    <input type="radio" name="role" value="developer" id="id_isDeveloper"> Developer<br>
+                    <input type="radio" name="role" value="designer" id="id_isDesigner"> Designer<br>
+                
+                </div>
+                <div class="submit-row">
+                    <button type="submit">Đăng ký</button>
+                </div>
+        </form>
+    </div>
+{% endblock %}

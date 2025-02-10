@@ -1,0 +1,44 @@
+{% extends "developersmaster.html" %}
+
+{% block title %}
+  Upload Game
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+    <div class="login">
+        <div id="container">
+        <div id="header">
+            <h1>Upload Game</h1>
+        </div>
+        <div id="content">
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <div class="message {{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <label for="id_username">Game's name:</label>
+                    <input type="name" name="name" id="id_username" placeholder="Nhập tên game của bạn" required>
+                </div>
+                <div class="form-row">
+                    <label for="id_phone">Price:</label>
+                    <input type="price" name="price" id="id_phone" placeholder="Nhập giá game" required>
+                </div>
+                <div class="form-row">
+                    <label for="id_name">Capacity:</label>
+                    <input type="capacity" name="capacity" id="id_name" placeholder="Nhập dung lượng game" required>
+                </div>
+                <div class="submit-row">
+                    <button type="submit">Upload</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

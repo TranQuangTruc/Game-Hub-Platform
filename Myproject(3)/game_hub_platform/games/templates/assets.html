@@ -1,0 +1,18 @@
+{% extends "developersmaster.html" %}
+
+{% block title %}
+  List Of All Assets
+{% endblock %}
+
+{% block content %}
+  <div class="card-container">
+    {% for x in myassets %}
+      <div class="mycard">
+        <h1>{{ x.name }}</h1>
+        <ul>
+          <li onclick="window.location = 'details/{{ x.id }}'">Detail</a></li>
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}  

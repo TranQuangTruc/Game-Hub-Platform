@@ -1,0 +1,44 @@
+{% extends "designersmaster.html" %}
+
+{% block title %}
+  Upload Asset
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+    <div class="login">
+        <div id="container">
+        <div id="header">
+            <h1>Upload Game</h1>
+        </div>
+        <div id="content">
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <div class="message {{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <label for="id_username">Asset's name:</label>
+                    <input type="name" name="name" id="id_username" placeholder="Nhập tên asset của bạn" required>
+                </div>
+                <div class="form-row">
+                    <label for="id_phone">Size:</label>
+                    <input type="size" name="size" id="id_phone" placeholder="Nhập kích cỡ asset" required>
+                </div>
+                <div class="form-row">
+                    <label for="id_name">Type:</label>
+                    <input type="type" name="type" id="id_name" placeholder="Nhập thể loại asset" required>
+                </div>
+                <div class="submit-row">
+                    <button type="submit">Upload</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

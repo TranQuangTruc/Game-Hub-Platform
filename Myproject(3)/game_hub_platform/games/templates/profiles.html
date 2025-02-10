@@ -1,0 +1,23 @@
+{% extends "playersmaster.html" %}
+
+{% block title %}
+  Profile
+{% endblock %}
+
+{% block content %}
+  <div class="card-container">
+    {% for x in myprofiles %}
+      <div class="mycard">
+        <h1>{{ x.name }}</h1>
+        <p>Email: {{ x.email }}</p>
+        <p>Phone: {{ x.phone|default:"N/A" }}</p>
+        <p>Points: {{ x.point|default:0 }}</p>
+        <p>Role: 
+          {% if x.isPlayer %} Player {% endif %}
+          {% if x.isDeveloper %} Developer {% endif %}
+          {% if x.isDesigner %} Designer {% endif %}
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
