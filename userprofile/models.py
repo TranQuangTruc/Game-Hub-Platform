@@ -39,3 +39,18 @@ class Developer(models.Model):
 
     def __str__(self):
         return self.name
+
+from django.contrib.auth.models import AbstractUser, Group, Permission
+
+class CustomUser(AbstractUser):
+    phone = models.CharField(max_length=20, null=True, blank=True)
+    address = models.TextField(blank=True, null=True)
+    zip_code = models.CharField(max_length=10, blank=True, null=True)
+    country = models.CharField(max_length=50, blank=True, null=True)
+    role = models.CharField(max_length=50, blank=True, null=True)
+
+    groups = models.ManyToManyField(Group, related_name="customuser_set", blank=True)
+    user_permissions = models.ManyToManyField(Permission, related_name="customuser_permissions_set", blank=True)
+
+    def __str__(self):
+        return self.username
