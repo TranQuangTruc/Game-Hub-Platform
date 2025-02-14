@@ -1,52 +1,234 @@
 {% extends "master.html" %}
 
-{% block title %}
-  Game Hub Platform
-{% endblock %}
+{% block title %}Trung tâm Trò chơi{% endblock %}
 
 {% block content %}
-  <div class="main">
-    <h1>Game Hub Platform</h1>
-
-    <div class="banner" style="margin: -50px auto; padding: -50px 0;">
-      <img src="https://play-lh.googleusercontent.com/eRpWIQcKexyWb9dPi6BVi9qXhH-4wgXTELSeAvFdd660eA5QhGYZPTbuxfgFtgY8ntSW" alt="Banner" style="max-width: 100%; height: 300px; display: block; margin: auto;">
-      <div class="banner-content" style="margin: -50px auto; padding: -50px 0;">
-        <h2>Chào mừng đến với thế giới game đỉnh cao</h2>
-        <p style="margin-top: -40px; margin-bottom: 50px;">Nơi tập trung những tựa game hấp dẫn và cộng đồng game thủ sôi động.</p>
-      </div>
-    </div>
-
-    <div class="featured-games">
-      <h2>Game nổi bật</h2>
-      <div class="game-list" style="margin: -80px auto; padding: -80px 0;">
-        <div class="game">
-          <img src="https://store-images.s-microsoft.com/image/apps.1340.14408815433578965.997661b1-d882-4979-bee2-55baea6e8772.d1c376d5-2dcc-467c-9a11-2d0a4e97ffac?w=672&h=378&q=80&mode=letterbox&background=%23FFE4E4E4&format=jpg" alt="Real Football" style="max-width: 100%; height: 300px; display: block; margin: auto;">
-          <h3 style="margin-top: -10px; margin-bottom: -10px;">Real FootballFootball</h3>
-          <p>Real Football là một game bóng đá siêu đỉnh với lối chơi tuyệt vời. Trò chơi này có lối chơi cực kỳ thú vị, chắc chắn sẽ khiến bạn say mê hàng giờ. Điều khiển rất đơn giản và dễ học. Với điều khiển bằng chuột, bạn sẽ có thể điều khiển nhóm của mình như một người chuyên nghiệp. Tham gia ngay bây giờ và chọn một đội.</p>
-        </div>
-        <div class="game" style="margin: -30px auto; padding: -50px 0;">
-          <img src="https://s.cafebazaar.ir/images/upload/screenshot/com.wolvesinteractive.traffictourclassic-8f1010eb-6676-4e54-9172-0d50b0294640.webp?x-img=v1/resize,h_600,lossless_false/optimize" alt="Traffic Tour" style="max-width: 100%; height: 300px; display: block; margin: auto;">
-          <h3 style="margin-top: -10px; margin-bottom: -10px;"> Traffic Tour </h3>
-          <p style="margin-top: 0px; margin-bottom: 50px;">Traffic Tour là một trò chơi đua xe trên đường cao tốc thú vị để chơi. Lái xe và điều hướng ô tô của bạn trên những con đường đông đúc và có một trò chơi đua xe arcade vô tận đưa bạn đến một cấp độ khác của mô phỏng lái xe mượt mà và chất lượng đồ họa cao. Nâng cấp ô tô của bạn với những thiết bị mạnh mẽ nhất được thiết kế dành cho những người hâm mộ tay đua giao thông với các tính năng nâng cao khiến trò chơi đua xe này trở nên thú vị.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="news-events">
-  <h2>Tin tức & Sự kiện</h2>
-  <div class="news-list">
-    <div class="news">
-      <img src="https://img.gamepix.com/games/real-football/cover/real-football.png?w=400&ar=16:10" alt="Real Football" style="max-width: 100%; height: 300px; display: block; margin: auto;">
-      <h3>Giải đấu Real Football sắp diễn ra</h3>
-      <p>Real Football tổ chức giải đấu lớn với hàng trăm đội tuyển tham gia, hứa hẹn mang đến những trận cầu hấp dẫn.</p>
+<div class="main">
+  <!-- Phần Hero -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1 class="hero-title">Chào mừng đến với Trung tâm Trò chơi</h1>
+      <p class="hero-description">Khám phá những trò chơi mới nhất và hòa mình vào thế giới giải trí đầy thú vị.</p>
+      <a href="/explore" class="btn-primary">Khám phá ngay</a>
     </div>
-    
-    <div class="news">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgwMsLAqGmSKFNBSgcCPqqgs1peenIWJVJyA&s" alt="Traffic Tour" style="max-width: 100%; height: 300px; display: block; margin: auto;">
-      <h3>Traffic Tour cập nhật phiên bản mới</h3>
-      <p>Bản cập nhật mới của Traffic Tour bổ sung thêm nhiều mẫu xe mới, đồ họa nâng cấp và chế độ chơi hấp dẫn.</p>
+    <img src="https://raw.githubusercontent.com/NoroffFEU/first-year-cross-course-assignment-brief-three/master/GameHub_Logo.png" alt="Hình Banner Trò chơi" class="hero-image">
+  </section>
+
+  <!-- Phần Dự án Nổi bật -->
+  <section class="featured-projects">
+    <h2>Dự án Nổi bật</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://genk.mediacdn.vn/thumb_w/800/139269124445442048/2024/4/10/capture-17127391166421163020637-20-77-496-839-crop-1712739181148649092839.png" alt="Dự án 1" class="project-thumbnail">
+        <h3>Dự án Game Hub</h3>
+        <p>Một nền tảng kết nối các game thủ và nhà phát triển trò chơi.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://i.ytimg.com/vi/SLpSlfRdnIk/maxresdefault.jpg" class="project-thumbnail">
+        <h3>Game Battle Arena</h3>
+        <p>Thách thức bạn bè và tham gia các trận đấu gay cấn.</p>
+      </div>
     </div>
+  </section>
+
+  <!-- Phần Trò chơi Phổ biến -->
+  <section class="popular-games">
+    <h2>Trò chơi phổ biến</h2>
+    <div class="game-grid">
+      <div class="game-card">
+        <img src="https://img.gamepix.com/games/army-force-war/cover/army-force-war.png?w=400&ar=16:10" alt="Trò chơi 1" class="game-thumbnail">
+        <h3>Tựa trò chơi 1</h3>
+        <p>Trải nghiệm gameplay hấp dẫn và hành động kịch tính.</p>
+      </div>
+      <div class="game-card">
+        <img src="https://i.ytimg.com/vi/xTGaeghB4CM/maxresdefault.jpg" alt="Trò chơi 2" class="game-thumbnail">
+        <h3>Tựa trò chơi 2</h3>
+        <p>Đắm chìm vào cuộc phiêu lưu kỳ ảo.</p>
+      </div>
+      <div class="game-card">
+        <img src="https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/158604/Originals/game-the-gioi-mo-4.jpeg" alt="Trò chơi 3" class="game-thumbnail">
+        <h3>Tựa trò chơi 3</h3>
+        <p>Chinh phục thế giới ảo với chiến thuật thông minh.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phần Sự kiện Sắp tới -->
+  <section class="upcoming-events">
+    <h2>Sự kiện sắp tới</h2>
+    <div class="event-list">
+      <div class="event-item">
+        <h3>Giải đấu Trò chơi 2025</h3>
+        <p>Tham gia giải đấu lớn nhất trong năm với nhiều phần thưởng hấp dẫn.</p>
+      </div>
+      <div class="event-item">
+        <h3>Phát hành trò chơi mới</h3>
+        <p>Trải nghiệm trò chơi mới sẽ ra mắt vào tháng sau.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phần Cộng đồng -->
+  <section class="community">
+    <h2>Tham gia Cộng đồng</h2>
+    <p>Kết nối với các game thủ khác, chia sẻ mẹo chơi và tham gia thảo luận.</p>
+    <a href="/community" class="btn-secondary">Tham gia ngay</a>
+  </section>
+
+  <!-- Phần Hỗ trợ -->
+  <div class="support-section">
+    <p>Cần hỗ trợ? <a href="/contact-support" class="support-link">Liên hệ đội hỗ trợ của chúng tôi</a></p>
   </div>
 </div>
-</div>
+
+<style>
+  body {
+    background-color: #ffffff;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+
+  .hero-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+  }
+  .hero-content {
+    max-width: 50%;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-image {
+    width: 40%;
+    border-radius: 1rem;
+  }
+
+  .featured-projects {
+    margin-bottom: 2rem;
+  }
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background-color: #3a3a3a;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  .project-thumbnail {
+    width: 100%; /* Giảm kích thước hình ảnh xuống còn 80% */
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .popular-games {
+    margin-bottom: 2rem;
+  }
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .game-card {
+    background-color: #3a3a3a;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  .game-card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
+  }
+  .game-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .upcoming-events {
+    margin-bottom: 2rem;
+  }
+  .event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .event-item {
+    padding: 1rem;
+    background-color: #3a3a3a;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .community {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c2c2c;
+    border-radius: 1rem;
+  }
+
+  .btn-primary {
+    background-color: #4287d1;
+    color: #ffffff !important;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0.5rem;
+  }
+  .btn-primary:hover {
+    background-color: #4752c8;
+  }
+
+  .btn-secondary {
+    background-color: #6c757d;
+    color: #ffffff !important;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+  }
+  .btn-secondary:hover {
+    background-color: #45494d;
+  }
+
+  .support-section {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #3a3a3a;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  .support-link {
+    color: #f4f4f4;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .support-link:hover {
+    text-decoration: underline;
+  }
+  .featured-projects h2, 
+  .popular-games h2, 
+  .upcoming-events h2 {
+    color: #000000; /* Màu đen */
+  }
+</style>
 {% endblock %}
