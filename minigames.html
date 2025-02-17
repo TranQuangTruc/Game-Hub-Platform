@@ -1,52 +1,146 @@
 {% extends "master.html" %}
 
 {% block title %}
-  List Of MiniGames
+  Danh sách Mini Game
 {% endblock %}
 
 {% block content %}
-  <div class="card-container">
-      <div class="mycard">
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Tìm kiếm game..." onkeyup="filterGames()" style="width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px;">
+  </div>
+
+  <div style="display: flex;">
+    <div class="sidebar-left" style="width: 20%; padding: 20px; background-color: #1A3F52; border-right: 1px solid #ccc;">
+      <h2 style="color: #ffffff;">Thể Loại Game</h2>
+      <ul style="list-style-type: none; padding: 0;">
+        <li><a href="#" style="text-decoration: none; color: #ffffff;">Đua Xe</a></li>
+        <li><a href="#" style="text-decoration: none; color: #ffffff;">Bắn Súng</a></li>
+        <li><a href="#" style="text-decoration: none; color: #ffffff;">Đối Kháng</a></li>
+        <li><a href="#" style="text-decoration: none; color: #ffffff;">Mô Phỏng</a></li>
+        <li><a href="#" style="text-decoration: none; color: #ffffff;">Thể Thao</a></li>
+      </ul>
+    </div>
+
+    <div class="card-container" style="width: 80%; display: flex; flex-wrap: wrap; gap: 20px;">
+      <div class="mycard" style="border: 1px solid #ccc; padding: 15px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);">
         <h1>Tetris</h1>
-        <ul>
-          <img src="https://photo2.tinhte.vn/data/attachment-files/2024/03/8293891_unnamed.webp"
-              style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
-        </ul>
+        <img src="https://photo2.tinhte.vn/data/attachment-files/2024/03/8293891_unnamed.webp" alt="Tetris" style="max-width: 250px; height: 150px; margin: 7.5px 0px;">
+        <p>Trò chơi xếp hình kinh điển với lối chơi hấp dẫn và thử thách.</p>
+        <a href="https://example.com/play-tetris" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
       </div>
+
       <div class="mycard">
         <h1>Snake</h1>
-        <ul>
-          <img src="https://dotesports.com/wp-content/uploads/2023/10/snake-game-header.jpg?w=1200"
-              style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
-        </ul>
+        <img src="https://dotesports.com/wp-content/uploads/2023/10/snake-game-header.jpg?w=1200" alt="Snake" style="max-width: 250px; height: 150px; margin: 7.5px 0px;">
+        <p>Điều khiển rắn ăn thức ăn và phát triển để đạt điểm cao nhất.</p>
+        <a href="https://example.com/play-snake" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
       </div>
+
       <div class="mycard">
         <h1>Minesweeper</h1>
-        <ul>
-          <img src="https://store-images.s-microsoft.com/image/apps.17472.9007199266246757.db625ec8-a024-470e-a413-924515c64b2c.316a1f72-e9d9-447b-8f0d-80b37c07d480?q=90&w=480&h=270"
-              style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
-        </ul>
+        <img src="https://store-images.s-microsoft.com/image/apps.17472.9007199266246757.db625ec8-a024-470e-a413-924515c64b2c.316a1f72-e9d9-447b-8f0d-80b37c07d480?q=90&w=480&h=270"
+          alt="Minesweeper" style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
+        <p>Tìm các quả mìn trên lưới mà không bị phát nổ trong trò chơi trí tuệ kinh điển này.</p>
+        <a href="https://example.com/play-minesweeper" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
       </div>
+      
       <div class="mycard">
         <h1>2048</h1>
-        <ul>
-          <img src="https://www.coolmathgames.com/sites/default/files/styles/mobile_game_image/public/2048_OG-logo.jpg?itok=0MDS7Guo"
-              style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
-        </ul>
+        <img src="https://www.coolmathgames.com/sites/default/files/styles/mobile_game_image/public/2048_OG-logo.jpg?itok=0MDS7Guo"
+          alt="2048" style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
+        <p>Trượt các ô số để kết hợp và đạt được số 2048 trong trò chơi ghép số đầy thử thách.</p>
+        <a href="https://example.com/play-2048" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
       </div>
+      
       <div class="mycard">
         <h1>Flappy Bird</h1>
-        <ul>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTckTRKli54Q9oiplhfky8XZokzrbByy0R6OQ&s"
-              style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
-        </ul>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTckTRKli54Q9oiplhfky8XZokzrbByy0R6OQ&s"
+          alt="Flappy Bird" style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
+        <p>Điều khiển chú chim vượt qua các chướng ngại vật trong trò chơi đình đám này.</p>
+        <a href="https://example.com/play-flappy-bird" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
       </div>
+      
       <div class="mycard">
         <h1>Pac-man</h1>
-        <ul>
-          <img src="https://media.vietnamplus.vn/images/7255a701687d11cb8c6bbc58a6c80785c531738e3787169ce34b631b27454b96eb5d7f68434f98ca1ca38a1124cee423/PacMan.jpg"
-              style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
-        </ul>
+        <img src="https://media.vietnamplus.vn/images/7255a701687d11cb8c6bbc58a6c80785c531738e3787169ce34b631b27454b96eb5d7f68434f98ca1ca38a1124cee423/PacMan.jpg"
+          alt="Pac-man" style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
+        <p>Thu thập các chấm trong mê cung và tránh những con ma trong trò chơi cổ điển này.</p>
+        <a href="https://example.com/play-pac-man" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
       </div>
+
+      <div class="mycard">
+        <h1>Sudoku</h1>
+        <img src="https://play-lh.googleusercontent.com/YPmFA8OLIWgc58l_wgR5wYNnH2VShz_j1iMynvsy7c9na1hcevyUhru8kNvqzjcrJII" 
+          alt="Sudoku" style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
+        <p>Điền các số từ 1 đến 9 vào bảng sao cho không có số nào lặp lại theo hàng, cột và vùng 3x3.</p>
+        <a href="https://example.com/play-sudoku" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
+      </div>
+      
+      <div class="mycard">
+        <h1>Color Switch</h1>
+        <img src="https://www.tapsmart.com/wp-content/uploads/2016/02/colorswitch-577x1024.jpeg"
+          alt="Color Switch" style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
+        <p>Chạm để điều khiển quả bóng vượt qua các vòng màu, chỉ được vượt qua khi màu trùng khớp.</p>
+        <a href="https://example.com/play-color-switch" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
+      </div>
+      
+      <div class="mycard">
+        <h1>Memory Match</h1>
+        <img src="https://play-lh.googleusercontent.com/nzLlY6sVzACWwIQSKHLZdp9QY2UIhXUH3K4zzrfs0JG-cfq0xmR51ivmAPcXG26JYw"
+          alt="Memory Match" style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
+        <p>Lật các thẻ bài để tìm các cặp hình giống nhau trong thời gian nhanh nhất.</p>
+        <a href="https://example.com/play-memory-match" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
+      </div>
+      
+      <div class="mycard">
+        <h1>Brick Breaker</h1>
+        <img src="https://play-lh.googleusercontent.com/XYudzYeqPD6rNNsT3-r8CsfPlqLK10nREOGMWfBrDicbnnFeHK4V8nGob5jyLJxQhQ"
+          alt="Brick Breaker" style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
+        <p>Sử dụng thanh trượt để đánh bật quả bóng và phá hết các viên gạch trong màn chơi.</p>
+        <a href="https://example.com/play-brick-breaker" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
+      </div>
+      
+      <div class="mycard">
+        <h1>Puzzle Slide</h1>
+        <img src="https://store-images.microsoft.com/image/apps.6530.9007199266409459.6b34eac3-2797-4386-82af-a76a124f1aac.e0c486e9-1fcf-48e0-97d1-1eb4d997587d?mode=scale&q=90&h=400&w=800&background=%23000000"
+          alt="Puzzle Slide" style="max-width: 250px; height: 150px; margin: 7.5px 0px; width: 351px;">
+        <p>Trượt các mảnh ghép để hoàn thành hình ảnh đúng thứ tự trong thời gian ngắn nhất.</p>
+        <a href="https://example.com/play-puzzle-slide" class="btn" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Chơi Ngay</a>
+      </div>      
+    </div>
+
+    <div class="sidebar-right" style="width: 20%; padding: 20px; background-color: #1A3F52; border-left: 1px solid #ccc;">
+      <h2 style="color: #ffffff;">Game Được Đề Xuất</h2>
+      <ul style="list-style-type: none; padding: 0;">
+        <li><a href="#" style="text-decoration: none; color: #ffffff;">Top 10 Game Hot</a></li>
+        <li><a href="#" style="text-decoration: none; color: #ffffff;">Game Hành Động</a></li>
+        <li><a href="#" style="text-decoration: none; color: #ffffff;">Game Được Yêu Thích</a></li>
+        <li><a href="#" style="text-decoration: none; color: #ffffff;">Game Mới Nhất</a></li>
+        <li><a href="#" style="text-decoration: none; color: #ffffff;">Game Miễn Phí</a></li>
+      </ul>
+    </div>
   </div>
-{% endblock %}   
+
+  <style>
+    .mycard p {
+      color: #ffffff; 
+    }
+  </style>
+    
+  <script>
+    function filterGames() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toLowerCase();
+      var cards = document.getElementsByClassName("mycard");
+
+      for (var i = 0; i < cards.length; i++) {
+        var title = cards[i].getElementsByTagName("h1")[0];
+        if (title.innerHTML.toLowerCase().indexOf(filter) > -1) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+{% endblock %}
